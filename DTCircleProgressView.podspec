@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
-  s.description      = "A customisable Circle progress Bar"
+  s.description      = "A customisable Circle progress Bar, color, progress color, value label, unit label, etc"
 
   s.homepage         = "https://github.com/nielstj/DTCircleProgressView"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"

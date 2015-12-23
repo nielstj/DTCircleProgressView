@@ -11,10 +11,11 @@
 		3226BD56C89EECEC5C0E9B141C816CED /* Pods-DTCircleProgressView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7783A2E7E2A0D6B2E597A57AE822B8D /* Pods-DTCircleProgressView_Example-dummy.m */; };
 		39A7F93FF085E956E9001AC2D13914C2 /* DTCircleProgressView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DC022990ECFC5E081D6641367630D4 /* DTCircleProgressView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD908F53C3B96FB34BA93DC65DBC57D /* Pods-DTCircleProgressView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E40F978D6CED17F85F6196E47E64E8E /* Pods-DTCircleProgressView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3ED944D2B1A3E512EDED39FA0B48D0DC /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99F395FEA1734ADF63E0D002C4BC80 /* ReplaceMe.swift */; };
 		40259AC096C150A9DAE4E97E6517F0B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		46A28294167AF50AF94C098214F6BDF6 /* DTCircleProgressView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5103BBA3020C903C2F2FC9720A7E5D82 /* DTCircleProgressView-dummy.m */; };
 		61E4236A645E965434C1C6428ACF3DBC /* Pods-DTCircleProgressView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AE8CE09F64EA789C7EF5763868A51EF /* Pods-DTCircleProgressView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		659484ED1C2A885F0031F9E4 /* DTCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659484EB1C2A885F0031F9E4 /* DTCircleProgressView.swift */; };
+		659484EE1C2A885F0031F9E4 /* DTCircleProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659484EC1C2A885F0031F9E4 /* DTCircleProgressView.xib */; };
 		66A86F48902F9AD7F3380972AC1C14E9 /* DTCircleProgressView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43092810D6BEC38CF0D5D9165F6CF999 /* DTCircleProgressView.bundle */; };
 		B7B141225D74FD5038757580318AD2E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		DE59CD8ED742C8F3249717BBC71CF3C4 /* Pods-DTCircleProgressView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA0084F2A1E4825E3EF36E51130FCFB /* Pods-DTCircleProgressView_Tests-dummy.m */; };
@@ -56,12 +57,13 @@
 		5D0F7CE46F4F4384E1D3D54D0536BF70 /* Pods-DTCircleProgressView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DTCircleProgressView_Example-resources.sh"; sourceTree = "<group>"; };
 		5D47EB8D2D43D70924897AAA6C029248 /* Pods-DTCircleProgressView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DTCircleProgressView_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		639EBA5D9124EDEC9E8C66C11228E2D1 /* Pods-DTCircleProgressView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DTCircleProgressView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		659484EB1C2A885F0031F9E4 /* DTCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTCircleProgressView.swift; sourceTree = "<group>"; };
+		659484EC1C2A885F0031F9E4 /* DTCircleProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCircleProgressView.xib; sourceTree = "<group>"; };
 		73515DFE3F47F07B132973C4B9A811F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75CD6BA1D82B4BC17BEE5241750693B7 /* Pods-DTCircleProgressView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DTCircleProgressView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7AE8CE09F64EA789C7EF5763868A51EF /* Pods-DTCircleProgressView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DTCircleProgressView_Example-umbrella.h"; sourceTree = "<group>"; };
 		7F12A32A766CFDDF27AA2E72065A5D58 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82DD6C8CCC791E8744CA938468B47AD3 /* Pods-DTCircleProgressView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DTCircleProgressView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		8B99F395FEA1734ADF63E0D002C4BC80 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		8BA0084F2A1E4825E3EF36E51130FCFB /* Pods-DTCircleProgressView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DTCircleProgressView_Tests-dummy.m"; sourceTree = "<group>"; };
 		96DC022990ECFC5E081D6641367630D4 /* DTCircleProgressView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DTCircleProgressView-umbrella.h"; sourceTree = "<group>"; };
 		99C2BF6CBBAE26A1B1F7E50B762D2B08 /* Pods-DTCircleProgressView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DTCircleProgressView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,7 +138,8 @@
 		56D29AB781C0386F73D4735A45F0E7DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8B99F395FEA1734ADF63E0D002C4BC80 /* ReplaceMe.swift */,
+				659484EB1C2A885F0031F9E4 /* DTCircleProgressView.swift */,
+				659484EC1C2A885F0031F9E4 /* DTCircleProgressView.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -354,7 +357,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -382,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659484EE1C2A885F0031F9E4 /* DTCircleProgressView.xib in Resources */,
 				66A86F48902F9AD7F3380972AC1C14E9 /* DTCircleProgressView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,8 +404,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659484ED1C2A885F0031F9E4 /* DTCircleProgressView.swift in Sources */,
 				46A28294167AF50AF94C098214F6BDF6 /* DTCircleProgressView-dummy.m in Sources */,
-				3ED944D2B1A3E512EDED39FA0B48D0DC /* ReplaceMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +679,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FF56DBE94E2A42FB4643D26E623F6560 /* DTCircleProgressView.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -703,6 +708,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FF56DBE94E2A42FB4643D26E623F6560 /* DTCircleProgressView.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
