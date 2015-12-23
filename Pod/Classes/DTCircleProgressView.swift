@@ -125,7 +125,9 @@ public class DTCircleProgressView: UIView {
         
         let rect = bounds.insetBy(dx: borderWidth, dy: borderWidth)
         CGContextBeginPath(ctx)
-        CGContextAddEllipseInRect(ctx, rect)
+        let newSize = min(rect.size.width, rect.size.height)
+        let newRect = CGRectMake(center.x - (newSize/2), center.y - (newSize/2), newSize, newSize)
+        CGContextAddEllipseInRect(ctx, newRect)
         CGContextDrawPath(ctx, .FillStroke)
         
         
