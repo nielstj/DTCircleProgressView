@@ -1,0 +1,14 @@
+PODS:
+  - DTCircleProgressView (0.1.0)
+
+DEPENDENCIES:
+  - DTCircleProgressView (from `../`)
+
+EXTERNAL SOURCES:
+  DTCircleProgressView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DTCircleProgressView: 551b6ac68a5228e3dcc02d7ad16761b11cab78d6
+
+COCOAPODS: 0.39.0

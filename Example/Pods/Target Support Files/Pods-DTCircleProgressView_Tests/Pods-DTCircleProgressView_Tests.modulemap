@@ -1,0 +1,6 @@
+framework module Pods_DTCircleProgressView_Tests {
+  umbrella header "Pods-DTCircleProgressView_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

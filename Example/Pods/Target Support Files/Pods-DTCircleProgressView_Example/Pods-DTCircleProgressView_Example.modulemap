@@ -1,0 +1,6 @@
+framework module Pods_DTCircleProgressView_Example {
+  umbrella header "Pods-DTCircleProgressView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
