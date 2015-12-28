@@ -17,42 +17,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bv9-6r-1Vk" customClass="DTCircleProgressView" customModule="DTCircleProgressView">
-                                <rect key="frame" x="150" y="200" width="300" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RTt-dA-m9D" customClass="DTCircleProgressView" customModule="DTCircleProgressView">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Zhy-0U-och"/>
-                                    <constraint firstAttribute="width" constant="300" id="i6v-m3-cWw"/>
+                                    <constraint firstAttribute="height" constant="200" id="Eru-Ko-N8s"/>
+                                    <constraint firstAttribute="width" constant="200" id="dSn-WY-QOK"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="valueString" value="88"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showUnit" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="valueUnit" value="KG"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
-                                        <color key="value" red="0.83879009049999997" green="0.016421669409999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                        <real key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
                                         <color key="value" red="0.99668482729999996" green="0.32549019610000002" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.93949258209999997" green="0.93949258209999997" blue="0.93949258209999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                        <color key="value" red="0.4243164062" green="0.79273745890000002" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="18"/>
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderAlpha">
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="HelveticaNeue-Bold"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.81599195079999998" green="0.81599195079999998" blue="0.81599195079999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="bv9-6r-1Vk" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="1kD-zL-be0"/>
-                            <constraint firstItem="bv9-6r-1Vk" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ytu-CG-Tdc"/>
+                            <constraint firstItem="RTt-dA-m9D" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="SPr-1L-ea7"/>
+                            <constraint firstItem="RTt-dA-m9D" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="eY9-W5-jga"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="circleView" destination="RTt-dA-m9D" id="1yC-uy-sTf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

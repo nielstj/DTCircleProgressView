@@ -11,12 +11,13 @@ import DTCircleProgressView
 
 class ViewController: UIViewController {
 
-    var circleView : DTCircleProgressView?
+    @IBOutlet weak var circleView : DTCircleProgressView?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
