@@ -71,9 +71,9 @@ public class DTCircleProgressView: UIView {
         
     }
     
-    @IBInspectable public var bgColor : UIColor = UIColor.redColor()
-    @IBInspectable public var borderColor : UIColor = UIColor.greenColor()
-    @IBInspectable public var progressColor : UIColor = UIColor.redColor()
+    @IBInspectable public var bgColor : UIColor = UIColor.clearColor()
+    @IBInspectable public var borderColor : UIColor = UIColor.whiteColor()
+    @IBInspectable public var progressColor : UIColor = UIColor.purpleColor()
     
     
     @IBInspectable public var borderWidth : CGFloat = 1.0
