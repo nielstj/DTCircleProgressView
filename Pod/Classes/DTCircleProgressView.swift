@@ -60,6 +60,7 @@ public class DTCircleProgressView: UIView {
             let unitAttrStr = NSAttributedString(string: valueUnit as String, attributes: attr)
             
             title.appendAttributedString(unitAttrStr)
+        
             
             titleLbl.attributedText = title
             
@@ -121,6 +122,9 @@ public class DTCircleProgressView: UIView {
 
         
         
+        let center = CGPointMake(rect.size.width/2, rect.size.height/2)
+        
+        
         // DRAW BORDER LINE
         CGContextSetLineWidth(ctx, borderWidth)
         borderColor = borderColor.colorWithAlphaComponent(borderAlpha)
@@ -129,7 +133,7 @@ public class DTCircleProgressView: UIView {
         let rect = bounds.insetBy(dx: borderWidth, dy: borderWidth)
         CGContextBeginPath(ctx)
         let newSize = min(rect.size.width, rect.size.height)
-        let newRect = CGRectMake(borderWidth, borderWidth, newSize, newSize)
+        let newRect = CGRectMake(center.x - (newSize/2), center.y - (newSize/2), newSize, newSize)
         CGContextAddEllipseInRect(ctx, newRect)
         CGContextDrawPath(ctx, .FillStroke)
         
@@ -141,7 +145,7 @@ public class DTCircleProgressView: UIView {
         let rectB = bounds.insetBy(dx: borderWidth * 1.5 , dy: borderWidth * 1.5)
         CGContextBeginPath(ctxB)
         let newSizeB = min(rectB.size.width, rectB.size.height)
-        let newRectB = CGRectMake(borderWidth * 1.5, borderWidth * 1.5, newSizeB, newSizeB)
+        let newRectB = CGRectMake(center.x - (newSizeB/2), center.y - (newSizeB/2), newSizeB, newSizeB)
         CGContextAddEllipseInRect(ctx, newRectB)
         CGContextDrawPath(ctxB, .FillStroke)
         
