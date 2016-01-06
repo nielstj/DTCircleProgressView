@@ -118,23 +118,7 @@ public class DTCircleProgressView: UIView {
     public override func drawRect(rect: CGRect) {
         
         let ctx = UIGraphicsGetCurrentContext()
-
-        
-        
         let center = CGPointMake(rect.size.width/2, rect.size.height/2)
-        
-        
-        // DRAW BORDER LINE
-        CGContextSetLineWidth(ctx, borderWidth)
-        borderColor = borderColor.colorWithAlphaComponent(borderAlpha)
-        CGContextSetStrokeColorWithColor(ctx, borderColor.CGColor)
-        CGContextSetFillColorWithColor(ctx, UIColor.clearColor().CGColor)
-        let rect = bounds.insetBy(dx: borderWidth, dy: borderWidth)
-        CGContextBeginPath(ctx)
-        let newSize = min(rect.size.width, rect.size.height)
-        let newRect = CGRectMake(center.x - (newSize/2), center.y - (newSize/2), newSize, newSize)
-        CGContextAddEllipseInRect(ctx, newRect)
-        CGContextDrawPath(ctx, .FillStroke)
         
         
         // DRAW CIRCLE FILL
@@ -147,6 +131,22 @@ public class DTCircleProgressView: UIView {
         let newRectB = CGRectMake(center.x - (newSizeB/2), center.y - (newSizeB/2), newSizeB, newSizeB)
         CGContextAddEllipseInRect(ctx, newRectB)
         CGContextDrawPath(ctxB, .FillStroke)
+        
+        
+        // DRAW BORDER BAR
+        borderColor = borderColor.colorWithAlphaComponent(borderAlpha)
+        let startAngleA = (progressAngle / 100.0) * M_PI - ((-progressRotationAngle / 100.0) * 2.0 + 0.5) * M_PI - (2.0 * M_PI) * (progressAngle / 100.0) * (100.0 - 100.0 * maxValue / maxValue) / 100.0
+        let endAngleA = -(progressAngle / 100.0) * M_PI - ((progressRotationAngle / 100.0) * 2.0 + 0.5) * M_PI
+        
+        let arcA = CGPathCreateMutable()
+        CGPathAddArc(arcA, nil, frame.width/2, frame.height/2, (min(frame.width, frame.height)/2) - borderWidth, CGFloat(startAngleA + (M_PI * progressRotationStart / 100.0)), CGFloat(endAngleA + (M_PI * progressRotationStart / 100.0)), true)
+        
+        let strokedArcA = CGPathCreateCopyByStrokingPath(arcA, nil, borderWidth, CGLineCap.Round, CGLineJoin.Miter, 10)
+        
+        CGContextAddPath(ctx, strokedArcA)
+        CGContextSetFillColorWithColor(ctx, borderColor.CGColor)
+        CGContextSetStrokeColorWithColor(ctx, UIColor.clearColor().CGColor)
+        CGContextDrawPath(ctx, .FillStroke);
         
         
         // DRAW PROGRESS BAR
