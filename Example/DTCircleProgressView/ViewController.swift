@@ -10,9 +10,8 @@ import UIKit
 import DTCircleProgressView
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var circleView : DTCircleProgressView?
     
+    @IBOutlet weak var progressView : DTCircleProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +24,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func reset(sender : UIButton) {
+        progressView.reset()
+    }
 }
 

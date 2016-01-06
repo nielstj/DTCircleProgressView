@@ -13,11 +13,11 @@ import UIKit
 public class DTCircleProgressView: UIView {
     
     
-    @IBInspectable public var valueString : String = "Title" {
+    @IBInspectable public var valueString : String = "" {
         didSet { updateTitleLabel() }
     }
     @IBInspectable public var showUnit : Bool = false
-    @IBInspectable public var valueUnit : String = "-" {
+    @IBInspectable public var valueUnit : String = "" {
         didSet { updateTitleLabel() }
     }
     
@@ -63,6 +63,7 @@ public class DTCircleProgressView: UIView {
         
             
             titleLbl.attributedText = title
+            titleLbl.textAlignment = .Center
             
         }
         else {
@@ -175,6 +176,16 @@ public class DTCircleProgressView: UIView {
         super.init(frame: frame)
         xibSetup()
     }
+    
+    
+    public func reset() {
+        valueString = ""
+        valueUnit = ""
+        value = 0
+        maxValue = 1
+        self.setNeedsDisplay()
+    }
+    
     
     
 }

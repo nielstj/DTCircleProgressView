@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -46,17 +47,33 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderAlpha">
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showUnit" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="valueString" value="1000"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="valueUnit" value="KG"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1s-55-OaC">
+                                <rect key="frame" x="36" y="550" width="528" height="30"/>
+                                <state key="normal" title="RESET"/>
+                                <connections>
+                                    <action selector="reset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ROR-7i-qgZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.81599195079999998" green="0.81599195079999998" blue="0.81599195079999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="P1s-55-OaC" secondAttribute="bottom" constant="20" id="AOC-dv-rED"/>
                             <constraint firstItem="RTt-dA-m9D" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="SPr-1L-ea7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P1s-55-OaC" secondAttribute="trailing" constant="16" id="ai7-oZ-1iS"/>
+                            <constraint firstItem="P1s-55-OaC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="d67-oq-rNR"/>
                             <constraint firstItem="RTt-dA-m9D" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="eY9-W5-jga"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="circleView" destination="RTt-dA-m9D" id="1yC-uy-sTf"/>
+                        <outlet property="progressView" destination="RTt-dA-m9D" id="cUq-Mf-37V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
