@@ -60,16 +60,14 @@ public class DTCircleProgressView: UIView {
             let unitAttrStr = NSAttributedString(string: valueUnit as String, attributes: attr)
             
             title.appendAttributedString(unitAttrStr)
-        
             
             titleLbl.attributedText = title
-            titleLbl.textAlignment = .Center
-            
         }
         else {
             titleLbl.font = UIFont(name: fontName as String, size: fontSize)
             titleLbl.text = valueString as String
         }
+        titleLbl.textAlignment = .Center
         
     }
     

@@ -18,6 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1s-55-OaC">
+                                <rect key="frame" x="36" y="550" width="528" height="30"/>
+                                <state key="normal" title="RESET"/>
+                                <connections>
+                                    <action selector="reset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ROR-7i-qgZ"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RTt-dA-m9D" customClass="DTCircleProgressView" customModule="DTCircleProgressView">
                                 <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -47,21 +54,14 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderAlpha">
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showUnit" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
                                         <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="valueString" value="1000"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="valueUnit" value="KG"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showUnit" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="valueString" value="2343"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="valueUnit" value="2er"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1s-55-OaC">
-                                <rect key="frame" x="36" y="550" width="528" height="30"/>
-                                <state key="normal" title="RESET"/>
-                                <connections>
-                                    <action selector="reset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ROR-7i-qgZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.81599195079999998" green="0.81599195079999998" blue="0.81599195079999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
