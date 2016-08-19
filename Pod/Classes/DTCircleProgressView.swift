@@ -147,9 +147,6 @@ open class DTCircleProgressView: UIView {
                     endAngle: CGFloat(endAngleA + (M_PI * progressRotationStart / 100.0)),
                     clockwise: true)
         
-        
-        //arcA.addArc(nil, x: frame.width/2, y: frame.height/2, radius: (min(frame.width, frame.height)/2) - borderWidth, startAngle: CGFloat(startAngleA + (M_PI * progressRotationStart / 100.0)), endAngle: CGFloat(endAngleA + (M_PI * progressRotationStart / 100.0)), clockwise: true)
-        
         let strokedArcA = CGPath(__byStroking: arcA, transform: nil, lineWidth: borderWidth, lineCap: CGLineCap.round, lineJoin: CGLineJoin.miter, miterLimit: 10)
         
         ctx?.addPath(strokedArcA!)
@@ -171,7 +168,6 @@ open class DTCircleProgressView: UIView {
                    endAngle: CGFloat(endAngle + (M_PI * progressRotationStart / 100.0)),
                    clockwise: true)
         
-        //arc.addArc(nil, x: frame.width/2, y: frame.height/2, radius: (min(frame.width, frame.height)/2) - borderWidth, startAngle: CGFloat(startAngle + (M_PI * progressRotationStart / 100.0)), endAngle: CGFloat(endAngle + (M_PI * progressRotationStart / 100.0)), clockwise: true)
         
         let strokedArc = CGPath(__byStroking: arc, transform: nil, lineWidth: borderWidth, lineCap: CGLineCap.round, lineJoin: CGLineJoin.miter, miterLimit: 10)
         
