@@ -22,7 +22,7 @@ public class DTCircleProgressView: UIView {
     }
     
     
-    @IBInspectable public var fontColor : UIColor = UIColor.whiteColor() {
+    @IBInspectable public var fontColor : UIColor = UIColor.white {
         didSet  { titleLbl.textColor = fontColor }
     }
     @IBInspectable public var fontSize : CGFloat = 15 {
@@ -40,26 +40,26 @@ public class DTCircleProgressView: UIView {
             
             var valueFont = UIFont(name: fontName as String, size: fontSize)
             if valueFont == nil {
-                valueFont = UIFont.systemFontOfSize(fontSize)
+                valueFont = UIFont.systemFont(ofSize: fontSize)
             }
             
             
             var attr = [NSFontAttributeName :valueFont!]
             let valueAttrStr = NSAttributedString(string: valueString as String, attributes: attr)
             
-            title.appendAttributedString(valueAttrStr)
-            title.appendAttributedString(NSAttributedString(string: "\n"))
+            title.append(valueAttrStr)
+            title.append(NSAttributedString(string: "\n"))
             
             var unitFont = UIFont(name: fontName as String, size: fontSize * 0.5)
             if unitFont == nil {
-                unitFont = UIFont.systemFontOfSize(fontSize * 0.5)
+                unitFont = UIFont.systemFont(ofSize: fontSize * 0.5)
             }
             
             
             attr = [NSFontAttributeName : unitFont!]
             let unitAttrStr = NSAttributedString(string: valueUnit as String, attributes: attr)
             
-            title.appendAttributedString(unitAttrStr)
+            title.append(unitAttrStr)
             
             titleLbl.attributedText = title
         }
@@ -67,13 +67,13 @@ public class DTCircleProgressView: UIView {
             titleLbl.font = UIFont(name: fontName as String, size: fontSize)
             titleLbl.text = valueString as String
         }
-        titleLbl.textAlignment = .Center
+        titleLbl.textAlignment = .center
         
     }
     
-    @IBInspectable public var bgColor : UIColor = UIColor.clearColor()
-    @IBInspectable public var borderColor : UIColor = UIColor.whiteColor()
-    @IBInspectable public var progressColor : UIColor = UIColor.purpleColor()
+    @IBInspectable public var bgColor : UIColor = UIColor.clear
+    @IBInspectable public var borderColor : UIColor = UIColor.white
+    @IBInspectable public var progressColor : UIColor = UIColor.purple
     
     
     @IBInspectable public var borderWidth : CGFloat = 1.0
@@ -101,67 +101,69 @@ public class DTCircleProgressView: UIView {
     func xibSetup() {
         view = loadViewFromNib()
         view.frame = bounds
-        view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
         addSubview(view)
     }
     
     func loadViewFromNib() -> UIView {
         
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: self.dynamicType)
         let nib = UINib(nibName: "DTCircleProgressView", bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options : nil)[0] as! UIView
+        let view = nib.instantiate(withOwner: self, options : nil)[0] as! UIView
         
         return view
     }
     
     
-    public override func drawRect(rect: CGRect) {
+    public override func draw(_ rect: CGRect) {
         
         let ctx = UIGraphicsGetCurrentContext()
-        let center = CGPointMake(rect.size.width/2, rect.size.height/2)
+        let center = CGPoint(x: rect.size.width/2, y: rect.size.height/2)
         
         
         // DRAW CIRCLE FILL
         let ctxB = UIGraphicsGetCurrentContext()
-        CGContextSetLineWidth(ctxB, 0)
-        CGContextSetFillColorWithColor(ctxB, bgColor.CGColor)
+        ctxB?.setLineWidth(0)
+        ctxB?.setFillColor(bgColor.cgColor)
         let rectB = bounds.insetBy(dx: borderWidth * 1.5 , dy: borderWidth * 1.5)
-        CGContextBeginPath(ctxB)
+        ctxB?.beginPath()
         let newSizeB = min(rectB.size.width, rectB.size.height)
-        let newRectB = CGRectMake(center.x - (newSizeB/2), center.y - (newSizeB/2), newSizeB, newSizeB)
-        CGContextAddEllipseInRect(ctx, newRectB)
-        CGContextDrawPath(ctxB, .FillStroke)
+        let newRectB = CGRect(x: center.x - (newSizeB/2), y: center.y - (newSizeB/2), width: newSizeB, height: newSizeB)
+        ctx?.addEllipse(inRect: newRectB)
+        ctxB?.drawPath(using: .fillStroke)
         
         
         // DRAW BORDER BAR
-        borderColor = borderColor.colorWithAlphaComponent(borderAlpha)
+        borderColor = borderColor.withAlphaComponent(borderAlpha)
         let startAngleA = (progressAngle / 100.0) * M_PI - ((-progressRotationAngle / 100.0) * 2.0 + 0.5) * M_PI - (2.0 * M_PI) * (progressAngle / 100.0) * (100.0 - 100.0 * maxValue / maxValue) / 100.0
-        let endAngleA = -(progressAngle / 100.0) * M_PI - ((progressRotationAngle / 100.0) * 2.0 + 0.5) * M_PI
+        let endAngleARight = ((progressRotationAngle / 100.0) * 2.0 + 0.5) * M_PI
+        let endAngleA = -(progressAngle / 100.0) * M_PI - endAngleARight
         
-        let arcA = CGPathCreateMutable()
-        CGPathAddArc(arcA, nil, frame.width/2, frame.height/2, (min(frame.width, frame.height)/2) - borderWidth, CGFloat(startAngleA + (M_PI * progressRotationStart / 100.0)), CGFloat(endAngleA + (M_PI * progressRotationStart / 100.0)), true)
+        let arcA = CGMutablePath()
+        arcA.addArc(nil, x: frame.width/2, y: frame.height/2, radius: (min(frame.width, frame.height)/2) - borderWidth, startAngle: CGFloat(startAngleA + (M_PI * progressRotationStart / 100.0)), endAngle: CGFloat(endAngleA + (M_PI * progressRotationStart / 100.0)), clockwise: true)
         
-        let strokedArcA = CGPathCreateCopyByStrokingPath(arcA, nil, borderWidth, CGLineCap.Round, CGLineJoin.Miter, 10)
+        let strokedArcA = CGPath(copyByStroking: arcA, transform: nil, lineWidth: borderWidth, lineCap: CGLineCap.round, lineJoin: CGLineJoin.miter, miterLimit: 10)
         
-        CGContextAddPath(ctx, strokedArcA)
-        CGContextSetFillColorWithColor(ctx, borderColor.CGColor)
-        CGContextSetStrokeColorWithColor(ctx, UIColor.clearColor().CGColor)
-        CGContextDrawPath(ctx, .FillStroke);
+        ctx?.addPath(strokedArcA!)
+        ctx?.setFillColor(borderColor.cgColor)
+        ctx?.setStrokeColor(UIColor.clear.cgColor)
+        ctx?.drawPath(using: .fillStroke);
         
         
         // DRAW PROGRESS BAR
         let startAngle = (progressAngle / 100.0) * M_PI - ((-progressRotationAngle / 100.0) * 2.0 + 0.5) * M_PI - (2.0 * M_PI) * (progressAngle / 100.0) * (100.0 - 100.0 * value / maxValue) / 100.0
-        let endAngle = -(progressAngle / 100.0) * M_PI - ((progressRotationAngle / 100.0) * 2.0 + 0.5) * M_PI
+        let endAngleRight = ((progressRotationAngle / 100.0) * 2.0 + 0.5) * M_PI
+        let endAngle = -(progressAngle / 100.0) * M_PI - endAngleRight
         
-        let arc = CGPathCreateMutable()
-        CGPathAddArc(arc, nil, frame.width/2, frame.height/2, (min(frame.width, frame.height)/2) - borderWidth, CGFloat(startAngle + (M_PI * progressRotationStart / 100.0)), CGFloat(endAngle + (M_PI * progressRotationStart / 100.0)), true)
+        let arc = CGMutablePath()
+        arc.addArc(nil, x: frame.width/2, y: frame.height/2, radius: (min(frame.width, frame.height)/2) - borderWidth, startAngle: CGFloat(startAngle + (M_PI * progressRotationStart / 100.0)), endAngle: CGFloat(endAngle + (M_PI * progressRotationStart / 100.0)), clockwise: true)
         
-        let strokedArc = CGPathCreateCopyByStrokingPath(arc, nil, borderWidth, CGLineCap.Round, CGLineJoin.Miter, 10)
+        let strokedArc = CGPath(copyByStroking: arc, transform: nil, lineWidth: borderWidth, lineCap: CGLineCap.round, lineJoin: CGLineJoin.miter, miterLimit: 10)
         
-        CGContextAddPath(ctx, strokedArc)
-        CGContextSetFillColorWithColor(ctx, progressColor.CGColor)
-        CGContextSetStrokeColorWithColor(ctx, UIColor.clearColor().CGColor)
-        CGContextDrawPath(ctx, .FillStroke);
+        ctx?.addPath(strokedArc!)
+        ctx?.setFillColor(progressColor.cgColor)
+        ctx?.setStrokeColor(UIColor.clear.cgColor)
+        ctx?.drawPath(using: .fillStroke);
         
     }
     
