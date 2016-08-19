@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
 
     
-    @IBAction func reset(sender : UIButton) {
+    @IBAction func reset(_ sender : UIButton) {
         progressView.reset()
     }
 }
