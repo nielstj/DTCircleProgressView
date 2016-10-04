@@ -32,6 +32,18 @@ open class DTCircleProgressView: UIView {
         didSet { updateTitleLabel() }
     }
     
+    @IBInspectable open var fontRatio: CGFloat = 0.5 {
+        didSet {
+            if fontRatio < 0 {
+                fontRatio = 0
+            }
+            if fontRatio > 1.0 {
+                fontRatio = 1.0
+            }
+            updateTitleLabel()
+        }
+    }
+    
     func updateTitleLabel() {
         
         if showUnit {
@@ -50,9 +62,9 @@ open class DTCircleProgressView: UIView {
             title.append(valueAttrStr)
             title.append(NSAttributedString(string: "\n"))
             
-            var unitFont = UIFont(name: fontName as String, size: fontSize * 0.5)
+            var unitFont = UIFont(name: fontName as String, size: fontSize * fontRatio)
             if unitFont == nil {
-                unitFont = UIFont.systemFont(ofSize: fontSize * 0.5)
+                unitFont = UIFont.systemFont(ofSize: fontSize * fontRatio)
             }
             
             
